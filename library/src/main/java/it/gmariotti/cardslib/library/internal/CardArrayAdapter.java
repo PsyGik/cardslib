@@ -27,10 +27,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-
-import java.util.HashMap;
-import java.util.List;
-
 import it.gmariotti.cardslib.library.R;
 import it.gmariotti.cardslib.library.internal.base.BaseCardArrayAdapter;
 import it.gmariotti.cardslib.library.view.CardListView;
@@ -38,6 +34,9 @@ import it.gmariotti.cardslib.library.view.CardView;
 import it.gmariotti.cardslib.library.view.listener.SwipeDismissListViewTouchListener;
 import it.gmariotti.cardslib.library.view.listener.UndoBarController;
 import it.gmariotti.cardslib.library.view.listener.UndoCard;
+
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * Array Adapter for {@link Card} model
@@ -115,6 +114,8 @@ public class CardArrayAdapter extends BaseCardArrayAdapter implements UndoBarCon
     public CardArrayAdapter(Context context, List<Card> cards) {
         super(context, cards);
     }
+
+
 
     // -------------------------------------------------------------
     // Views

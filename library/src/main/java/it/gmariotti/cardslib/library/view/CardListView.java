@@ -29,6 +29,7 @@ import android.graphics.Canvas;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.AbsListView;
@@ -69,7 +70,7 @@ import it.gmariotti.cardslib.library.internal.CardArrayAdapter;
  * </p>
  * @author Gabriele Mariotti (gabri.mariotti@gmail.com)
  */
-public class CardListView extends ListView implements CardView.OnExpandListAnimatorListener {
+public class CardListView extends ListView implements CardView.OnExpandListAnimatorListener{
 
     protected static String TAG = "CardListView";
 
@@ -82,6 +83,10 @@ public class CardListView extends ListView implements CardView.OnExpandListAnima
      * Card Cursor Adapter
      */
     protected CardCursorAdapter mCursorAdapter;
+
+    private View footer;
+    private boolean isLoading;
+
 
     //--------------------------------------------------------------------------
     // Fields for expand/collapse animation
@@ -139,6 +144,7 @@ public class CardListView extends ListView implements CardView.OnExpandListAnima
 
         //Set divider to 0dp
         setDividerHeight(0);
+
 
     }
 
@@ -199,6 +205,7 @@ public class CardListView extends ListView implements CardView.OnExpandListAnima
 
         adapter.setCardListView(this);
         mAdapter=adapter;
+
     }
 
     /**
@@ -214,10 +221,11 @@ public class CardListView extends ListView implements CardView.OnExpandListAnima
 
         adapter.setCardListView(this);
         mCursorAdapter=adapter;
+
     }
 
     /**
-     * You can use this method, if you are using external adapters.
+     * You can use this method, if you are using external com.humesis.adapters.
      * Pay attention. The generic adapter#getView() method has to call the cardArrayAdapter#getView() method to work.
      *
      * @param adapter {@link ListAdapter} generic adapter
@@ -233,7 +241,7 @@ public class CardListView extends ListView implements CardView.OnExpandListAnima
     }
 
     /**
-     * You can use this method, if you are using external adapters.
+     * You can use this method, if you are using external com.humesis.adapters.
      * Pay attention. The generic adapter#getView() method has to call the cardCursorAdapter#getView() method to work.
      *
      * @param adapter {@link ListAdapter} generic adapter
@@ -721,5 +729,4 @@ public class CardListView extends ListView implements CardView.OnExpandListAnima
             canvas.translate(0, -v.getTop());
         }
     }
-
 }

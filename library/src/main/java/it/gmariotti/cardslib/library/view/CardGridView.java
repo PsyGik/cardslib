@@ -217,7 +217,7 @@ public class CardGridView extends GridView implements CardView.OnExpandListAnima
     }
 
     /**
-     * You can use this method, if you are using external adapters.
+     * You can use this method, if you are using external com.humesis.adapters.
      * Pay attention. The generic adapter#getView() method has to call the cardArrayAdapter#getView() method to work.
      *
      * @param adapter {@link ListAdapter} generic adapter
@@ -233,7 +233,7 @@ public class CardGridView extends GridView implements CardView.OnExpandListAnima
     }
 
     /**
-     * You can use this method, if you are using external adapters.
+     * You can use this method, if you are using external com.humesis.adapters.
      * Pay attention. The generic adapter#getView() method has to call the cardCursorAdapter#getView() method to work.
      *
      * @param adapter {@link ListAdapter} generic adapter
